@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game FakingTextArea</title>
+</head>
+<body>
+<center>
+    <h1>Truyện Kiều - Nguyễn Du</h1>
+    <p></p>
+    <textarea oninput="fakeText()" id="txt" cols="50" rows="20"></textarea>
+</center>
+<script>
+    let txt = 'Trăm năm trong cõi người ta,\n' +
+        'Chữ tài chữ mệnh khéo là ghét nhau.\n' +
+        'Trải qua một cuộc bể dâu,\n' +
+        'Những điều trông thấy mà đau đớn lòng.\n' +
+        'Lạ gì bỉ sắc tư phong,\n' +
+        'Trời xanh quen thói má hồng đánh ghen.\n' +
+        'Cảo thơm lần giở trước đèn,\n' +
+        'Phong tình cổ lục còn truyền sử xanh.\n' +
+        'Rằng: Năm Gia-tĩnh triều Minh,\n' +
+        'Bốn phương phẳng lặng hai kinh chữ vàng.\n' +
+        'Có nhà viên ngoại họ Vương,\n' +
+        'Gia tư nghỉ cũng thường thường bậc trung.\n' +
+        'Một trai con thứ rốt lòng,\n' ;
+    let arrTxt = txt.split(' ');
+    let str = '';
+    let count = 0;
+
+    function fakeText() {
+        str += arrTxt[count] + " ";
+        document.getElementById('txt').value = str;
+        count++;
+        if (count >= arrTxt.length) {
+            str = '';
+            count = 0;
+        }
+    }
+</script>
+</body>
+</html>
